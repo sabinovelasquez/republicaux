@@ -29,8 +29,8 @@ case ENV['TARGET'].to_s.downcase
     deploy.method   = :ftp
     deploy.host     = 'ftp.brandbookdigital.cl'
     deploy.path     = '/public_html/liderlatam/'
-    deploy.user     = 'brandboo'
-    deploy.password = 'br4ndb00kf0r3v3r1978'
+    deploy.user     = 'user'
+    deploy.password = 'pass'
     deploy.build_before = true
     end
   else
