@@ -1,0 +1,28 @@
+---
+title: Líderes Latam
+---
+
+#top.container
+	#logo
+		%span.icon-logotecho
+	#ellc
+		%img.img-responsive(src= 'img/ellc.png')
+		%span Encuentro latinoamericano de líderes comunitarios
+		%small del 18 al 22 de Mayo, México 2015
+	
+	#rrss
+		%a#historia.btn.btn-default
+			Cuenta tu Historia
+		= link_to "https://www.facebook.com/TECHO.org", :id => "tofb", :class => 'icons', :target => '_blank' do
+			%span.icon-facebook
+		= link_to "https://twitter.com/UnTecho", :id => "totw", :class => 'icons', :target => '_blank' do
+			%span.icon-twitter
+		= link_to "http://www.instagram.com/techo_org", :id => "toinst", :class => 'icons', :target => '_blank' do
+			%span.icon-instagram
+
+#content.container
+	.col-md-12.col-sm-12.col-xs-12
+		#loader.alert.alert-success(role = 'alert')
+			Cargando Tweets...
+		#alerta.alert.alert-danger(role = 'alert')
+			No se encontraron resultados.
