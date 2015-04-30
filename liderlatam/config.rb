@@ -27,10 +27,10 @@ case ENV['TARGET'].to_s.downcase
   when 'production'
     activate :deploy do |deploy|
     deploy.method   = :ftp
-    deploy.host     = 'ftp.brandbookdigital.cl'
-    deploy.path     = '/public_html/liderlatam/'
-    deploy.user     = 'user'
-    deploy.password = 'pass'
+    deploy.host     = 'ftp.techo.org'
+    deploy.path     = '/'
+    deploy.user     = 'lidereslatam@techo.org'
+    deploy.password = 'difonia22'
     deploy.build_before = true
     end
   else
