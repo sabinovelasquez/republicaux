@@ -31,7 +31,6 @@ case ENV['TARGET'].to_s.downcase
     deploy.path     = '/'
     deploy.user     = 'lidereslatam@techo.org'
     deploy.password = 'difonia22'
-    deploy.build_before = true
     end
   else
     activate :deploy do |deploy|
