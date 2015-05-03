@@ -125,7 +125,7 @@ body{
 		padding: 0;
 		overflow: hidden;
 		border: none;
-		background-color: #EDEE8F;
+		background-color: #FFFCD3;
 		transition: background-color 0.3s ease;
 		img{
 			width: 100%;
@@ -153,13 +153,20 @@ body{
 			right: 25px;
 			opacity: .5;
 		}
-		.bottom.icon-facebook {
-	  		color: #3b5998;
-			font-size: 30px;
+		.lang {
 			position: absolute;
-			bottom: 25px;
-			right: 25px;
-			opacity: .5;
+			bottom: 30px;
+			right: 33px;
+			font-size: 12px;
+			z-index: 2;
+			color: #FFF;
+		}
+		.ago{
+			position: absolute;
+			right: 30px;
+			font-size: .8em;
+			bottom: 30px;
+			right: 60px;
 		}
 	}
 	.well:hover {

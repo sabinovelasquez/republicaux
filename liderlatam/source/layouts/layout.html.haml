@@ -2,10 +2,15 @@
 %html(lang='es')
   %head
 
-  %meta{:charset => 'utf-8'}
-  %meta(http-equiv = 'X-UA-Compatible' content = 'IE=edge')
-  %meta(name = 'viewport' content = 'width=device-width, initial-scale=1, maximum-scale=1')
-  
+    %meta{:charset => 'utf-8'}
+    %meta(http-equiv = 'X-UA-Compatible' content = 'IE=edge')
+    %meta(name = 'viewport' content = 'width=device-width, initial-scale=1, maximum-scale=1')
+    
+    %meta(property = 'og:url' content = 'http://lidereslatam.techo.org/')
+    %meta(property = 'og:title' content = 'Líderes Latam' )
+    %meta(property = 'og:image' content = 'http://lidereslatam.techo.org/img/ellc.png' )
+    %meta(property = 'og:description' content = '100 representantes de los asentamientos informales latinoamericanos se reúnen para aportar a una sociedad más justa.')
+
   %title 
     = current_page.data.title || 'Líderes Latam'
   = stylesheet_link_tag 'style'
