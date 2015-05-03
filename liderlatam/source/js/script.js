@@ -17,13 +17,14 @@ var properties = {
   }
 }
 
-var Block = function(message, media, lang, user, date, link, order) {
-  message = this.message;
-  media = this.media;
-  lang = this.lang;
-  user = this.user;
-  date = this.date;
-  link = this.link;
+var Block = function(rt, message, media, lang, user, date, link, order) {
+	rt = this.rt,
+	message = this.message;
+	media = this.media;
+	lang = this.lang;
+	user = this.user;
+	date = this.date;
+	link = this.link;
 }
 
 function buildBlocks() {
@@ -35,6 +36,7 @@ function buildBlocks() {
 			var block = new Block();
 			var date = new Date(item.created_at);
 			block.message = item.text;
+			block.rt = item.retweet_count;
 			block.user = item.user.screen_name;
 			if(item.entities.media){
 				block.media = item.entities.media[0].media_url;
@@ -43,7 +45,11 @@ function buildBlocks() {
 			block.order = date.getTime();
 			block.lang = item.user.lang;
 			_.extend(block, properties);
-			blocks.push(block);
+			
+			var rt = item.retweeted_status;
+			if(!rt){
+				blocks.push(block);
+			}
 		});
 		generalBuild();
 	});
@@ -52,11 +58,15 @@ function buildBlocks() {
 function generalBuild() {
 	$.each(blocks, function(index, item) {
 		var div = '<div class="item col-md-4 col-sm-6 col-xs-12"><div class="well well-lg" style="border:3px solid '+item.getColor()+'">';
-
+		var rt = '';
+		if(parseInt(item.rt)>0){
+			rt = '<br/><span class="rt">RT: '+item.rt+'</span>';
+		}
 		if(item.media) {
 			div += '<img class="img-responsive" src="'+item.media+'">';
 		}
-		div += '<p class="ttext">'+item.message+'</p>';
+
+		div += '<p class="ttext">'+item.message+rt+'</p>';
 		div += '<span class="ago">'+item.date+'</span><small><a class="tw" href="https://twitter.com/'+item.user+'" target="_blank">@'+item.user+'</a></small><span class="lang">'+item.lang+'</span><span class="icon-twitter bottom"></span></div><!--.well--></div><!--.col-->';
 		$('#content').append(div);
 		$('p.ttext').linkify();

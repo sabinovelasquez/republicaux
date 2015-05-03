@@ -8,7 +8,7 @@ $settings = array(
 );
 
 $url = 'https://api.twitter.com/1.1/search/tweets.json';
-$getfield = '?q=%23LideresLatam+OR+%23&iacute;deresLatam';
+$getfield = '?q=%23LideresLatam+OR+%23&iacute;deresLatam+OR+%23Lid&egrave;Latam&count=100';
 $requestMethod = 'GET';
 
 $twitter = new TwitterAPIExchange($settings);
