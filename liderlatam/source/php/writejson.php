@@ -11,6 +11,8 @@ $url = 'https://api.twitter.com/1.1/search/tweets.json';
 $getfield = '?q=%23LideresLatam+OR+%23LideLatam+OR+%23&iacute;deresLatam+OR+%23Lid&egrave;Latam&count=450';
 $requestMethod = 'GET';
 
+$file = '../json/tweets.json';
+
 $twitter = new TwitterAPIExchange($settings);
 $response = $twitter->setGetfield($getfield)
     ->buildOauth($url, $requestMethod)
@@ -19,9 +21,9 @@ $response = $twitter->setGetfield($getfield)
 $check = json_decode($response);
 
 if($check){
-	echo $response;
-}else{
-	echo '{"statuses":[]}';
+	$current = $response;
+	$current .= file_get_contents($file);
+	file_put_contents($file, $current);
 }
 
 ?>
