@@ -1,0 +1,61 @@
+#sidebar.side-collapsed
+	%a#close.text-center.side-collapsed
+		%i.fa.fa-close
+	%span.icon-rux.text-center
+	.inner
+		%ul.menu
+			%li.menu-item
+				%a.profiles
+					Crew
+					%i.fa.fa-angle-right
+			%li.menu-item
+				%a.cats
+					Categorías  
+					%i.fa.fa-angle-right
+			%li.menu-item
+				%a( href = 'mailto:contacto@republicaux.cl' )
+					Contacto
+		%ul.categories
+			%li.menu-item
+				%a.back
+					%i.fa.fa-angle-left
+					Atrás
+			%li.menu-item
+				%a#allcat.filter.active-cat(data = 'side')
+					TODOS
+		%ul.profiles
+			%li.menu-item
+				%a.back
+					%i.fa.fa-angle-left
+					Atrás
+		%ul.side-footer
+			%li
+				%a( href = 'https://www.facebook.com/republicaux' target = '_blank' )
+					%i.fa.fa-facebook-square
+			%li
+				%a( href = 'https://twitter.com/republicaux' target = '_blank' )
+					%i.fa.fa-twitter-square
+			%li
+				%a( href = 'https://medium.com/@republicaux' target = '_blank' )
+					%i.fa.fa-medium
+			%li
+				%a( href = 'https://instagram.com/republicaux/' target = '_blank' )
+					%i.fa.fa-instagram
+
+			%li.form
+				#mc_embed_signup
+					%form#mc-embedded-subscribe-form.validate( action = '//repubicaux.us9.list-manage.com/subscribe/post?u=30214d7e71f6aa96ab3cb30fa&amp;id=ac0088764c' method = 'post' name = 'mc-embedded-subscribe-form' target = '_blank' novalidate = '' )
+						.mc_embed_signup_scroll
+							%input#mce-EMAIL.email( type = 'email' name = 'EMAIL' placeholder = 'Escribe tu e-mail' required = '' )
+							%input( style = 'display:none;' type = 'text' name = 'b_30214d7e71f6aa96ab3cb30fa_ac0088764c' tabindex = '-1' value = '' )
+							%input#mc-embedded-subscribe( type = 'submit' name = 'subscribe' tabindex = '-1' value = 'Suscribete' )
+
+
+
+
+
+
+
+
+
+
